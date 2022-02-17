@@ -1,10 +1,11 @@
-on: [push]
+on:
+  release:
+    types: [created]
 
 jobs:
   run-unit-tests:
     name: Fake action
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -23,3 +24,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
