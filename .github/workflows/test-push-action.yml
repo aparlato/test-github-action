@@ -17,7 +17,7 @@ jobs:
         run: |
           git config --local user.name "github-actions"
           git add ./test.json
-          git commit -m "Update test.json"
+          git diff-index --quiet HEAD || git commit -m "Update test.json"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
