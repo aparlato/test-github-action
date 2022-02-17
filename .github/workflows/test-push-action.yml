@@ -12,7 +12,6 @@ jobs:
       - id: list-s3-dirs
         shell: bash
         run: |
-          yarn install
           echo "Hello world" > test.json
       - name: Commit files
         run: |
