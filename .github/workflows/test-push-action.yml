@@ -1,6 +1,4 @@
-on:
-  release:
-    types: [created]
+on: [push]
 
 jobs:
   run-unit-tests:
@@ -14,13 +12,18 @@ jobs:
       - id: list-s3-dirs
         shell: bash
         run: |
-          echo "Whatever" > test.json
-      - name: Commit files
-        run: |
-          git config --local user.name "github-actions"
-          git add ./test.json
-          git diff-index --quiet HEAD || git commit -m "Update test.json"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          echo "hello world !" > test.json
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: |
+            test.json
+          commit-message: 'Update test.json'
+          committer: github-actions <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-releases-presets
+          assignees: ${{ github.actor }}
+          title: 'Cool test'
+          body: |
+            Github actions opening PRs over here

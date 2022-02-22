@@ -1,4 +1,3 @@
 # test-github-action
-Tests a Github action
 
-change
+Tests a Github action
