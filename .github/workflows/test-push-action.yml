@@ -18,7 +18,7 @@ jobs:
         with:
           add-paths: '/test.json'
           commit-message: 'Update test.json'
-          committer: 'github-actions'
+          committer: github-actions <noreply@github.com>
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-releases-presets
           base: main
