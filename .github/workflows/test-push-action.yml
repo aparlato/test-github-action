@@ -21,3 +21,4 @@ jobs:
           committer: 'github-actions'
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-releases-presets
+          base: main
