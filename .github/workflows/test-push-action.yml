@@ -16,7 +16,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          add-paths: '/test.json'
+          add-paths: |
+            test.json
           commit-message: 'Update test.json'
           committer: github-actions <noreply@github.com>
           token: ${{ secrets.GITHUB_TOKEN }}
