@@ -12,7 +12,7 @@ jobs:
       - id: list-s3-dirs
         shell: bash
         run: |
-          echo "hello world !" > test.json
+          echo "hello world" > test.json
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
