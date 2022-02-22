@@ -12,15 +12,15 @@ jobs:
       - id: list-s3-dirs
         shell: bash
         run: |
-          echo "hello world" > test.json
+          echo "hello world !" > test.json
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
+          base: main
           add-paths: |
             test.json
           commit-message: 'Update test.json'
           committer: github-actions <noreply@github.com>
-          base: main
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-releases-presets
