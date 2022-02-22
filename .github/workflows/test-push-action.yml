@@ -31,3 +31,5 @@ jobs:
           title: 'Cool test'
           body: |
             Github actions opening PRs over here
+            cc @${{ github.actor }}
+            cc ${{ github.actor }}
