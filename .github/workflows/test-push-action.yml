@@ -16,10 +16,13 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          add-paths: |
-            test.json
           commit-message: 'Update test.json'
           committer: github-actions <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-releases-presets
           base: main
+          assignees: ${{ github.actor }}
+          title: 'Cool test'
+          body: |
+            Github actions opening PRs over here
