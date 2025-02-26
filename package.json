@@ -1,6 +1,6 @@
 {
   "name": "test-github-action",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Tests a Github action",
   "main": "index.js",
   "scripts": {
